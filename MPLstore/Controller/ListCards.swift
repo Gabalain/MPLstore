@@ -7,71 +7,68 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListCards: UIViewController, UITableViewDelegate, UITableViewDataSource, canReceiveUpdatedCard {
+    
     func updatedCardReceived(card: Card) {
         print("Received card : ", card.balance)
         
         listCardsTV.reloadData()
     }
     
-    
     @IBOutlet weak var listCardsTV: UITableView!
     @IBOutlet weak var balanceLbl: UILabel!
+    @IBOutlet weak var personLbl: UILabel!
+    @IBOutlet weak var imageIV: UIImageView!
     
-    var cards: [Card] = []
+    var cards: Results<Card>!
     var totalBalance: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cardStore = Card()
-        cardStore.active = true
-        cardStore.balance = 12.5
-        cardStore.name = "MPLStore"
+        // Rounded image
+        imageIV.layer.cornerRadius = imageIV.frame.width / 2
+        imageIV.layer.masksToBounds = true
         
-        let cardNew = Card()
-        cardNew.active = true
-        cardNew.balance = 0.0
-        cardNew.name = "New card"
+        // Customized Tabbar transparent green with no border
+        CustomTabBar.appearance().layer.borderWidth = 0.0
+        CustomTabBar.appearance().clipsToBounds = true
+//        CustomTabBar.appearance().backgroundColor = UIColor.init(white: 0, alpha: 0)
+        CustomTabBar.appearance().backgroundColor = UIColor.red
+        CustomTabBar.appearance().tintColor = hexStringToUIColor(hex: "55B397")
         
-        let cardFood = Card()
-        cardFood.active = false
-        cardFood.balance = 0.0
-        cardFood.name = "MPLFood"
-        
-        let cardShop = Card()
-        cardShop.active = false
-        cardShop.balance = 0.0
-        cardShop.name = "MPLShop"
-        
-        cards = [cardStore, cardNew, cardFood, cardShop]
+//        resetModel()
+        updateView()
         
         listCardsTV.delegate = self
         listCardsTV.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
+    }
+    
+    func updateView() {
+        let defaults = UserDefaults.standard
         
-        // Do any additional setup after loading the view, typically from a nib.
+        // defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        var userId: Int? = defaults.integer(forKey: "userId")
+        if userId == nil {
+            userId = getPersons().first?.id
+            defaults.set(userId, forKey: "userId")
+        }
+        let user = getPersonWithId(userId!)
+        personLbl.text = user.name
+        imageIV.image = UIImage(named: user.image)
+        
+        cards = getSortedCardsOfPerson()
+        listCardsTV.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        // Sort cards = Active, New, Not Active and calculate totalBalance
-        var activeCards: [Card] = []
-        var newCards: [Card] = []
-        var nonActiveCards: [Card] = []
-        for card in cards {
-            if card.active && card.name != "New card" { activeCards.append(card) }
-            if card.name == "New card" { newCards.append(card) }
-            if !card.active { nonActiveCards.append(card) }
-        }
-        
-        let cards2 = [activeCards, newCards, nonActiveCards]
-        cards = cards2.flatMap { $0 }
-        
-        for card in cards {
-            print(card.name, card.active)
-        }
-        
         totalBalance = 0.0
         for card in cards {
             totalBalance += card.balance
@@ -105,57 +102,56 @@ class ListCards: UIViewController, UITableViewDelegate, UITableViewDataSource, c
         return cell
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        listCardsTV.reloadData()
-        
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if cards[indexPath.row].active {
+        
+        if cards[indexPath.row].active && cards[indexPath.row].name != "New card" {
             performSegue(withIdentifier: "showCard", sender: self)
         } else if cards[indexPath.row].name == "New card" {
-            performSegue(withIdentifier: "scanCard", sender: self)
+            performSegue(withIdentifier: "goToScanCard", sender: self)
         } else {
             performSegue(withIdentifier: "newCard", sender: self)
         }
+        
+        listCardsTV.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let brandIndex = listCardsTV.indexPathForSelectedRow else { return }
         
         if segue.identifier == "showCard" {
-            guard let showCard = segue.destination as? ShowCard else {
-                print("Destination not found")
-                return
-            }
-            
-            guard let brandIndex = listCardsTV.indexPathForSelectedRow else {
-                print("Category Index not found")
-                return
-            }
-            
+            guard let showCard = segue.destination as? ShowCard else { return }
             showCard.card = cards[brandIndex.row]
             showCard.delegate = self
         }
         
         if segue.identifier == "newCard" {
-            guard let newCard = segue.destination as? NewCard else {
-                print("Destination not found")
-                return
-            }
-            
-            guard let brandIndex = listCardsTV.indexPathForSelectedRow else {
-                print("Category Index not found")
-                return
-            }
-            
+            guard let newCard = segue.destination as? NewCard else { return }
             newCard.card = cards[brandIndex.row]
             newCard.delegate = self
         }
     }
-     
-
-
+    
+    //MARK: - Manage Swipeable Cells
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let reset = cardReset(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [reset])
+    }
+    
+    // Set to reccurent
+    func cardReset(at indexPath: IndexPath) -> UIContextualAction {
+        let card = cards![indexPath.row]
+        
+        let action = UIContextualAction(style: .normal, title: "Reset") { (action, view, completion) in
+            resetCard(card)
+            DispatchQueue.main.async {
+                self.listCardsTV.reloadData()
+            }
+            completion(true)
+        }
+        action.backgroundColor = UIColor.lightGray
+        return action
+    }
 }
+
 

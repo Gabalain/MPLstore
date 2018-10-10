@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MPLStore" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-vQ-YaB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MPLstore" translatesAutoresizingMaskIntoConstraints="NO" id="EFj-vQ-YaB">
                                 <rect key="frame" x="50" y="305.5" width="275" height="56"/>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MPLStore" width="298" height="56"/>
+        <image name="MPLstore" width="298" height="56"/>
     </resources>
 </document>

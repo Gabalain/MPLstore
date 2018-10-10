@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A80627352D94D100CBA995F /* Pods_MPLstore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0935C2FA3A080441D489966 /* Pods_MPLstore.framework */; };
 		B51CD7AD216608D900D9C07A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7AC216608D900D9C07A /* AppDelegate.swift */; };
 		B51CD7AF216608D900D9C07A /* ListCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7AE216608D900D9C07A /* ListCards.swift */; };
 		B51CD7B2216608D900D9C07A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51CD7B0216608D900D9C07A /* Main.storyboard */; };
@@ -16,12 +17,29 @@
 		B51CD7C821663BCC00D9C07A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7C721663BCC00D9C07A /* Card.swift */; };
 		B51CD7CA21663FDA00D9C07A /* CommonFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7C921663FDA00D9C07A /* CommonFuncs.swift */; };
 		B51CD7CC21664F9700D9C07A /* ShowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7CB21664F9700D9C07A /* ShowCard.swift */; };
-		B51CD7CE216746FE00D9C07A /* newCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7CD216746FE00D9C07A /* newCard.swift */; };
+		B51CD7CE216746FE00D9C07A /* NewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7CD216746FE00D9C07A /* NewCard.swift */; };
 		B51CD7D02167610E00D9C07A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7CF2167610E00D9C07A /* Protocols.swift */; };
-		B51CD7D221677A0D00D9C07A /* listServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7D121677A0D00D9C07A /* listServicesVC.swift */; };
+		B51CD7D221677A0D00D9C07A /* ListCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7D121677A0D00D9C07A /* ListCategories.swift */; };
+		B51CD7D421677D7E00D9C07A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7D321677D7E00D9C07A /* Category.swift */; };
+		B51CD7D621677F5200D9C07A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7D521677F5200D9C07A /* CategoryCell.swift */; };
+		B51CD7D82167999400D9C07A /* RealmFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7D72167999400D9C07A /* RealmFuncs.swift */; };
+		B51CD7DA216A695B00D9C07A /* ListServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7D9216A695B00D9C07A /* ListServices.swift */; };
+		B51CD7DC216A6DED00D9C07A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7DB216A6DED00D9C07A /* Service.swift */; };
+		B51CD7DE216A70B600D9C07A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7DD216A70B600D9C07A /* Person.swift */; };
+		B51CD7E0216A817800D9C07A /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7DF216A817800D9C07A /* Profil.swift */; };
+		B51CD7E2216B3DF600D9C07A /* CreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7E1216B3DF600D9C07A /* CreateModel.swift */; };
+		B51CD7E4216B9FE300D9C07A /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7E3216B9FE300D9C07A /* ServiceCell.swift */; };
+		B51CD7E6216BC4D600D9C07A /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7E5216BC4D600D9C07A /* Drive.swift */; };
+		B51CD7E8216BCA8400D9C07A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51CD7E7216BCA8400D9C07A /* CoreLocation.framework */; };
+		B51CD7EA216C001F00D9C07A /* ChatInDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7E9216C001F00D9C07A /* ChatInDrive.swift */; };
+		B51CD7EC216D017200D9C07A /* ScanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7EB216D017200D9C07A /* ScanCard.swift */; };
+		B51CD7EE216D03CF00D9C07A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7ED216D03CF00D9C07A /* CustomTabBar.swift */; };
+		B51CD7F0216D1A2C00D9C07A /* ServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CD7EF216D1A2C00D9C07A /* ServiceDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3380630A26323659E12C848E /* Pods-MPLstore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPLstore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPLstore/Pods-MPLstore.debug.xcconfig"; sourceTree = "<group>"; };
+		B0935C2FA3A080441D489966 /* Pods_MPLstore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPLstore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51CD7A9216608D900D9C07A /* MPLstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPLstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51CD7AC216608D900D9C07A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B51CD7AE216608D900D9C07A /* ListCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCards.swift; sourceTree = "<group>"; };
@@ -33,9 +51,25 @@
 		B51CD7C721663BCC00D9C07A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B51CD7C921663FDA00D9C07A /* CommonFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFuncs.swift; sourceTree = "<group>"; };
 		B51CD7CB21664F9700D9C07A /* ShowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCard.swift; sourceTree = "<group>"; };
-		B51CD7CD216746FE00D9C07A /* newCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCard.swift; sourceTree = "<group>"; };
+		B51CD7CD216746FE00D9C07A /* NewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCard.swift; sourceTree = "<group>"; };
 		B51CD7CF2167610E00D9C07A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		B51CD7D121677A0D00D9C07A /* listServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listServicesVC.swift; sourceTree = "<group>"; };
+		B51CD7D121677A0D00D9C07A /* ListCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategories.swift; sourceTree = "<group>"; };
+		B51CD7D321677D7E00D9C07A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B51CD7D521677F5200D9C07A /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		B51CD7D72167999400D9C07A /* RealmFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFuncs.swift; sourceTree = "<group>"; };
+		B51CD7D9216A695B00D9C07A /* ListServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServices.swift; sourceTree = "<group>"; };
+		B51CD7DB216A6DED00D9C07A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B51CD7DD216A70B600D9C07A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		B51CD7DF216A817800D9C07A /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
+		B51CD7E1216B3DF600D9C07A /* CreateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModel.swift; sourceTree = "<group>"; };
+		B51CD7E3216B9FE300D9C07A /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		B51CD7E5216BC4D600D9C07A /* Drive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
+		B51CD7E7216BCA8400D9C07A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B51CD7E9216C001F00D9C07A /* ChatInDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInDrive.swift; sourceTree = "<group>"; };
+		B51CD7EB216D017200D9C07A /* ScanCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCard.swift; sourceTree = "<group>"; };
+		B51CD7ED216D03CF00D9C07A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		B51CD7EF216D1A2C00D9C07A /* ServiceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetail.swift; sourceTree = "<group>"; };
+		E7E437B45FADFAF9929C1385 /* Pods-MPLstore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPLstore.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPLstore/Pods-MPLstore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +77,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51CD7E8216BCA8400D9C07A /* CoreLocation.framework in Frameworks */,
+				2A80627352D94D100CBA995F /* Pods_MPLstore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141EDDE4492DBFCDEFF232F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B51CD7E7216BCA8400D9C07A /* CoreLocation.framework */,
+				B0935C2FA3A080441D489966 /* Pods_MPLstore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		985135F4B1F7982735203A1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3380630A26323659E12C848E /* Pods-MPLstore.debug.xcconfig */,
+				E7E437B45FADFAF9929C1385 /* Pods-MPLstore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B51CD7A0216608D900D9C07A = {
 			isa = PBXGroup;
 			children = (
 				B51CD7AB216608D900D9C07A /* MPLstore */,
 				B51CD7AA216608D900D9C07A /* Products */,
+				985135F4B1F7982735203A1D /* Pods */,
+				141EDDE4492DBFCDEFF232F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,12 +124,13 @@
 		B51CD7AB216608D900D9C07A /* MPLstore */ = {
 			isa = PBXGroup;
 			children = (
-				B51CD7C621663BAE00D9C07A /* Controller */,
-				B51CD7C521663BA800D9C07A /* View */,
 				B51CD7C421663BA100D9C07A /* Model */,
+				B51CD7C521663BA800D9C07A /* View */,
+				B51CD7C621663BAE00D9C07A /* Controller */,
 				B51CD7AC216608D900D9C07A /* AppDelegate.swift */,
 				B51CD7C921663FDA00D9C07A /* CommonFuncs.swift */,
 				B51CD7B0216608D900D9C07A /* Main.storyboard */,
+				B51CD7EB216D017200D9C07A /* ScanCard.swift */,
 				B51CD7B3216608DC00D9C07A /* Assets.xcassets */,
 				B51CD7B5216608DC00D9C07A /* LaunchScreen.storyboard */,
 				B51CD7B8216608DC00D9C07A /* Info.plist */,
@@ -85,6 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				B51CD7C721663BCC00D9C07A /* Card.swift */,
+				B51CD7D321677D7E00D9C07A /* Category.swift */,
+				B51CD7DB216A6DED00D9C07A /* Service.swift */,
+				B51CD7DD216A70B600D9C07A /* Person.swift */,
+				B51CD7D72167999400D9C07A /* RealmFuncs.swift */,
+				B51CD7E1216B3DF600D9C07A /* CreateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				B51CD7C02166149B00D9C07A /* CardCell.swift */,
+				B51CD7D521677F5200D9C07A /* CategoryCell.swift */,
+				B51CD7E3216B9FE300D9C07A /* ServiceCell.swift */,
+				B51CD7ED216D03CF00D9C07A /* CustomTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,9 +167,14 @@
 			children = (
 				B51CD7AE216608D900D9C07A /* ListCards.swift */,
 				B51CD7CB21664F9700D9C07A /* ShowCard.swift */,
-				B51CD7CD216746FE00D9C07A /* newCard.swift */,
+				B51CD7D121677A0D00D9C07A /* ListCategories.swift */,
+				B51CD7D9216A695B00D9C07A /* ListServices.swift */,
+				B51CD7EF216D1A2C00D9C07A /* ServiceDetail.swift */,
+				B51CD7E5216BC4D600D9C07A /* Drive.swift */,
+				B51CD7E9216C001F00D9C07A /* ChatInDrive.swift */,
+				B51CD7DF216A817800D9C07A /* Profil.swift */,
+				B51CD7CD216746FE00D9C07A /* NewCard.swift */,
 				B51CD7CF2167610E00D9C07A /* Protocols.swift */,
-				B51CD7D121677A0D00D9C07A /* listServicesVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B51CD7BB216608DC00D9C07A /* Build configuration list for PBXNativeTarget "MPLstore" */;
 			buildPhases = (
+				29049AF478308E3C80649FA3 /* [CP] Check Pods Manifest.lock */,
 				B51CD7A5216608D900D9C07A /* Sources */,
 				B51CD7A6216608D900D9C07A /* Frameworks */,
 				B51CD7A7216608D900D9C07A /* Resources */,
+				8B3C0AF16C47CC6F51B28DD3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,20 +247,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29049AF478308E3C80649FA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPLstore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B3C0AF16C47CC6F51B28DD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MPLstore/Pods-MPLstore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MPLstore/Pods-MPLstore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B51CD7A5216608D900D9C07A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B51CD7D221677A0D00D9C07A /* listServicesVC.swift in Sources */,
+				B51CD7F0216D1A2C00D9C07A /* ServiceDetail.swift in Sources */,
+				B51CD7DE216A70B600D9C07A /* Person.swift in Sources */,
+				B51CD7D221677A0D00D9C07A /* ListCategories.swift in Sources */,
+				B51CD7DA216A695B00D9C07A /* ListServices.swift in Sources */,
+				B51CD7E4216B9FE300D9C07A /* ServiceCell.swift in Sources */,
+				B51CD7E6216BC4D600D9C07A /* Drive.swift in Sources */,
 				B51CD7AF216608D900D9C07A /* ListCards.swift in Sources */,
-				B51CD7CE216746FE00D9C07A /* newCard.swift in Sources */,
+				B51CD7CE216746FE00D9C07A /* NewCard.swift in Sources */,
+				B51CD7D82167999400D9C07A /* RealmFuncs.swift in Sources */,
 				B51CD7AD216608D900D9C07A /* AppDelegate.swift in Sources */,
+				B51CD7EA216C001F00D9C07A /* ChatInDrive.swift in Sources */,
+				B51CD7D621677F5200D9C07A /* CategoryCell.swift in Sources */,
 				B51CD7C821663BCC00D9C07A /* Card.swift in Sources */,
+				B51CD7D421677D7E00D9C07A /* Category.swift in Sources */,
+				B51CD7DC216A6DED00D9C07A /* Service.swift in Sources */,
+				B51CD7EE216D03CF00D9C07A /* CustomTabBar.swift in Sources */,
 				B51CD7CC21664F9700D9C07A /* ShowCard.swift in Sources */,
 				B51CD7C12166149B00D9C07A /* CardCell.swift in Sources */,
+				B51CD7E2216B3DF600D9C07A /* CreateModel.swift in Sources */,
 				B51CD7CA21663FDA00D9C07A /* CommonFuncs.swift in Sources */,
+				B51CD7E0216A817800D9C07A /* Profil.swift in Sources */,
 				B51CD7D02167610E00D9C07A /* Protocols.swift in Sources */,
+				B51CD7EC216D017200D9C07A /* ScanCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +459,7 @@
 		};
 		B51CD7BC216608DC00D9C07A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3380630A26323659E12C848E /* Pods-MPLstore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -350,6 +478,7 @@
 		};
 		B51CD7BD216608DC00D9C07A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7E437B45FADFAF9929C1385 /* Pods-MPLstore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

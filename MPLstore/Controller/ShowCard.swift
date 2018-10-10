@@ -17,6 +17,7 @@ class ShowCard: UIViewController {
     @IBOutlet weak var brandLbl: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var balanceLbl: UILabel!
+    @IBOutlet weak var barCode: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,25 +30,21 @@ class ShowCard: UIViewController {
     }
 
     @IBAction func dismissPressed(_ sender: Any) {
-        print("card is passed: ", card.balance)
-        delegate?.updatedCardReceived(card: card)
-        
         dismiss(animated: true, completion: nil)
     }
     
     @objc func scanCard() {
- //       drawRect(rect: mainView.frame)
-//        drawLine(ofColor: UIColor.red, inView: mainView)
         
-        let centerX = mainView.frame.width / 2
-        let centerY = mainView.frame.height / 2 - 15
-        let width = mainView.frame.width - 80
+        let width = barCode.frame.width + 20
+        let scanHeight: CGFloat = 60
+        let centerX = barCode.frame.width / 2
+        let centerY = (barCode.frame.height / 2) - 30
         
         let scanLine: UIView = UIView()
-        mainView.addSubview(scanLine)
+        barCode.addSubview(scanLine)
         scanLine.backgroundColor = UIColor.red
         
-        let scanLineEndY = mainView.frame.origin.y + 30
+        let scanLineEndY = centerY + scanHeight
         
         scanLine.frame = CGRect(x: 0, y: 0, width: width, height: 2)
         scanLine.center = CGPoint(x: centerX, y: centerY)
@@ -57,16 +54,25 @@ class ShowCard: UIViewController {
             weakSelf!.center = CGPoint(x: weakSelf!.center.x, y: scanLineEndY)
         }, completion: { (finished: Bool) in
             scanLine.isHidden = true
-            let randomAmount: Float = Float(arc4random_uniform(400))
+            let randomAmount: Float = Float(arc4random_uniform(400)) + 100.0
             print(randomAmount)
-            self.updateCardBalance(card: self.card, amount: randomAmount / 100)
+            self.updateCardBalanceAndDismiss(card: self.card, amount: randomAmount / 100)
         })
         
     }
     
-    func updateCardBalance(card: Card, amount: Float) {
-        card.balance = card.balance + amount
+    func updateCardBalanceAndDismiss(card: Card, amount: Float) {
+        updateCardBalance(card, amount)
         balanceLbl.text = floatToString(card.balance, 2) + " MPLcoins"
+        
+        delegate?.updatedCardReceived(card: card)
+        
+        perform(#selector(byeModal), with: nil, afterDelay: 1)
+        
+    }
+    
+    @objc func byeModal() {
+        dismiss(animated: true, completion: nil)
     }
 
 }
